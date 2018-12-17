@@ -34,12 +34,15 @@ public class ResultExtractor {
     this.objectFactory = objectFactory;
   }
 
+  //TODO 2018-12-13 目前实力暂无法看的明白
+  //抽取 extract
   public Object extractObjectFromList(List<Object> list, Class<?> targetType) {
     Object value = null;
     if (targetType != null && targetType.isAssignableFrom(list.getClass())) {
       value = list;
     } else if (targetType != null && objectFactory.isCollection(targetType)) {
       value = objectFactory.create(targetType);
+      //MetaObject元对象
       MetaObject metaObject = configuration.newMetaObject(value);
       metaObject.addAll(list);
     } else if (targetType != null && targetType.isArray()) {

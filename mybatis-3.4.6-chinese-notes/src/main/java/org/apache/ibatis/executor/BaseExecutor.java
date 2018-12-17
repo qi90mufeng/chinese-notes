@@ -347,7 +347,8 @@ public abstract class BaseExecutor implements Executor {
   public void setExecutorWrapper(Executor wrapper) {
     this.wrapper = wrapper;
   }
-  
+
+  //延迟加载
   private static class DeferredLoad {
 
     private final MetaObject resultObject;
@@ -374,6 +375,7 @@ public abstract class BaseExecutor implements Executor {
       this.targetType = targetType;
     }
 
+    //缓存中找到，且不为占位符，代表可以加载
     public boolean canLoad() {
       return localCache.getObject(key) != null && localCache.getObject(key) != EXECUTION_PLACEHOLDER;
     }

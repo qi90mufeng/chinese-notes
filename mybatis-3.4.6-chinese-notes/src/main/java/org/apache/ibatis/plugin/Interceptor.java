@@ -22,10 +22,13 @@ import java.util.Properties;
  */
 public interface Interceptor {
 
+  //在此方法中实现自己需要的功能，最后执行invocation.proceed()方法，实际就是调用method.invoke(target, args)方法，调用代理类
   Object intercept(Invocation invocation) throws Throwable;
 
+  // target指的是被拦截的对象，对拦截对象生成一个代理对象，并返回
   Object plugin(Object target);
 
+  //在plugin元素中配置所需要的参数，在插件初始化的时候调用一次
   void setProperties(Properties properties);
 
 }

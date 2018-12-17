@@ -28,7 +28,8 @@ public class VFSTest {
   @Test
   public void getInstanceShouldNotBeNull() throws Exception {
     VFS vsf = VFS.getInstance();
-    //added by qi90mufeng  vsf.list("org/res");
+    //added by qi90mufeng
+    //vsf.list("org/res");
     Assert.assertNotNull(vsf);
   }
 

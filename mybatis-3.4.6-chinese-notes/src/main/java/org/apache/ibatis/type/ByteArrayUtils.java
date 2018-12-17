@@ -24,6 +24,7 @@ class ByteArrayUtils {
     // Prevent Instantiation
   }
 
+  //转换为本原数组
   static byte[] convertToPrimitiveArray(Byte[] objects) {
     final byte[] bytes = new byte[objects.length];
     for (int i = 0; i < objects.length; i++) {

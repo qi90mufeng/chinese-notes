@@ -129,6 +129,7 @@ public class ClassLoaderWrapper {
   }
 
   /*
+   * 用多个类加载器一个个查找资源，只要其中任何一个找到，就返回
    * Get a resource as a URL using the current class path
    *
    * @param resource    - the resource to locate
@@ -201,6 +202,7 @@ public class ClassLoaderWrapper {
 
   }
 
+  //用5个类加载器一个个查找资源，只要其中任何一个找到，就返回
   ClassLoader[] getClassLoaders(ClassLoader classLoader) {
     return new ClassLoader[]{
         classLoader,

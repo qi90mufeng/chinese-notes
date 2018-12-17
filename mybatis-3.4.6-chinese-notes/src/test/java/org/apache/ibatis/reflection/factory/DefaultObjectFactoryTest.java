@@ -96,4 +96,10 @@ public class DefaultObjectFactoryTest {
     Set set = defaultObjectFactory.create(Set.class);
     Assert.assertTrue(" set should be HashSet", set instanceof HashSet);
   }
+
+  @Test
+  public void resolveInterface() throws Exception {
+    DefaultObjectFactory defaultObjectFactory = new DefaultObjectFactory();
+    defaultObjectFactory.resolveInterface(Set.class);
+  }
 }

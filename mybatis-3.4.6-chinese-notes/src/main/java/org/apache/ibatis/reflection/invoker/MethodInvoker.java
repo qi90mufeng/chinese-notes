@@ -28,7 +28,7 @@ public class MethodInvoker implements Invoker {
 
   public MethodInvoker(Method method) {
     this.method = method;
-
+    //TODO 2018-12-13 type取值逻辑？
     if (method.getParameterTypes().length == 1) {
       type = method.getParameterTypes()[0];
     } else {

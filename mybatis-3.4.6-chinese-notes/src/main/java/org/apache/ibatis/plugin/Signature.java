@@ -21,6 +21,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * 签名
+ * 类  +  方法   +   形参
  * @author Clinton Begin
  */
 @Documented

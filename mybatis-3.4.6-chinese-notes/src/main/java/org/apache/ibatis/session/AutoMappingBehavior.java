@@ -28,6 +28,7 @@ public enum AutoMappingBehavior {
   NONE,
 
   /**
+   * 部分
    * Will only auto-map results with no nested result mappings defined inside.
    */
   PARTIAL,

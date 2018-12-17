@@ -31,12 +31,9 @@ public final class LogFactory {
   private static Constructor<? extends Log> logConstructor;
 
   static {
-    tryImplementation(new Runnable() {
-      @Override
-      public void run() {
-        useSlf4jLogging();
-      }
-    });
+    tryImplementation(()->
+        useSlf4jLogging()
+    );
     tryImplementation(new Runnable() {
       @Override
       public void run() {

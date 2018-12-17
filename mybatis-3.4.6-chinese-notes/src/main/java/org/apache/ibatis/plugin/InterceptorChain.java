@@ -26,6 +26,10 @@ public class InterceptorChain {
 
   private final List<Interceptor> interceptors = new ArrayList<Interceptor>();
 
+  /**
+   * 在Configuration类中可以看到在初始化Executor、ParameterHandler、ResultSetHandler和StatementHandler
+   * 都会调用interceptorChain.pluginAll() 这个函数
+   */
   public Object pluginAll(Object target) {
     for (Interceptor interceptor : interceptors) {
       target = interceptor.plugin(target);
